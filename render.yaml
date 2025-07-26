@@ -1,19 +1,9 @@
 services:
   - type: web
     name: maxit-app
-    env: web
+    env: php
     buildCommand: |
-      # Installation de PHP et des dépendances
-      apt-get update
-      apt-get install -y php8.1-cli php8.1-fpm php8.1-pgsql php8.1-mbstring php8.1-xml php8.1-curl
-      
-      # Installation de Composer
-      curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-      
-      # Installation des dépendances du projet
       composer install --no-dev
-      
-      # Exécution des migrations
       php migration.php
     startCommand: php -S 0.0.0.0:$PORT -t public/
     envVars:
