@@ -1,8 +1,13 @@
 services:
   - type: web
     name: maxit-app
+    env: static
     runtime: php
-    buildCommand: composer install
+    buildCommand: |
+      curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+      apt-get update && apt-get install -y php8.1-cli php8.1-pgsql php8.1-mbstring
+      composer install
+      php migration.php
     startCommand: php -S 0.0.0.0:$PORT -t public/
     envVars:
       - key: APP_ENV
