@@ -25,11 +25,27 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 WORKDIR /var/www/html
 COPY composer.json composer.lock ./
 
+# Création du fichier .env
+RUN echo "APP_ENV=production" > .env \
+    && echo "DB_DRIVER=pgsql" >> .env \
+    && echo "DB_HOST=dpg-d221q115pdvs738gbss0-a.oregon-postgres.render.com" >> .env \
+    && echo "DB_PORT=5432" >> .env \
+    && echo "DB_NAME=maxit" >> .env \
+    && echo "DB_USER=maxit_user" >> .env \
+    && echo "DB_PASSWORD=BUJxqyXDS8MYceL1yVqPMu17yO7yaTT0" >> .env
+
 # Installation des dépendances
 RUN composer install --no-dev --optimize-autoloader
 
 # Copie du reste des fichiers du projet
 COPY . .
 
-# Les variables d'environnement seront injectées par Render
-CMD ["apache2-foreground"]
+# Permissions pour Apache
+RUN chown -R www-data:www-data /var/www/html
+
+# Copie et configuration du script d'entrée
+COPY entrypoint.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/entrypoint.sh
+
+# Utilisation du script d'entrée
+CMD ["entrypoint.sh"]
