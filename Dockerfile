@@ -21,8 +21,14 @@ RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf
 # Installation de Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-# Copie des fichiers du projet
+# Copie des fichiers composer avant l'installation
 WORKDIR /var/www/html
+COPY composer.json composer.lock ./
+
+# Installation des dépendances
+RUN composer install --no-dev --optimize-autoloader
+
+# Copie du reste des fichiers du projet
 COPY . .
 
 # Les variables d'environnement seront injectées par Render
