@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "52bcfd1a3ccbbb13a605ea484409e7b1",
+    "content-hash": "1316cb4fef2d16dd621b5f45cd4a0aa4",
     "packages": [
         {
             "name": "graham-campbell/result-type",
@@ -67,52 +67,6 @@
                 }
             ],
             "time": "2024-07-20T21:45:45+00:00"
-        },
-        {
-            "name": "mrsems/router-php",
-            "version": "v1.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/papesembene/RouterDependency.git",
-                "reference": "84ac4760c776cb4d46d0a7e4c8260e93b007fe3b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/papesembene/RouterDependency/zipball/84ac4760c776cb4d46d0a7e4c8260e93b007fe3b",
-                "reference": "84ac4760c776cb4d46d0a7e4c8260e93b007fe3b",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.4"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "App\\Router\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "pape sembene",
-                    "email": "sembenpape4@gmail.com"
-                }
-            ],
-            "description": "A simple router dependency injection library",
-            "keywords": [
-                "framework",
-                "php",
-                "router",
-                "routing"
-            ],
-            "support": {
-                "issues": "https://github.com/papesembene/RouterDependency/issues",
-                "source": "https://github.com/papesembene/RouterDependency/tree/v1.1.0"
-            },
-            "time": "2025-07-25T11:09:52+00:00"
         },
         {
             "name": "phpoption/phpoption",
@@ -431,23 +385,22 @@
         },
         {
             "name": "twilio/sdk",
-            "version": "8.7.0",
+            "version": "6.44.4",
             "source": {
                 "type": "git",
-                "url": "https://github.com/twilio/twilio-php",
-                "reference": "88b8c4e82943267106424f903ffa881b0fd9074b"
+                "url": "https://github.com/twilio/twilio-php.git",
+                "reference": "08aad5f377e2245b9cd7508e7762d95e7392fa4d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/twilio/twilio-php/zipball/88b8c4e82943267106424f903ffa881b0fd9074b",
-                "reference": "88b8c4e82943267106424f903ffa881b0fd9074b",
+                "url": "https://api.github.com/repos/twilio/twilio-php/zipball/08aad5f377e2245b9cd7508e7762d95e7392fa4d",
+                "reference": "08aad5f377e2245b9cd7508e7762d95e7392fa4d",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.1.0"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "^3.0",
                 "guzzlehttp/guzzle": "^6.3 || ^7.0",
                 "phpunit/phpunit": ">=7.0 < 10"
             },
@@ -477,7 +430,11 @@
                 "sms",
                 "twilio"
             ],
-            "time": "2025-07-24T08:04:30+00:00"
+            "support": {
+                "issues": "https://github.com/twilio/twilio-php/issues",
+                "source": "https://github.com/twilio/twilio-php/tree/6.44.4"
+            },
+            "time": "2023-02-22T19:59:53+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -570,7 +527,9 @@
     "stability-flags": {},
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": {},
+    "platform": {
+        "php": "^8.1"
+    },
     "platform-dev": {},
     "plugin-api-version": "2.6.0"
 }

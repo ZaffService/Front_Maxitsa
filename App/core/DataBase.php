@@ -26,19 +26,21 @@ class DataBase
     {
         if ($this->conn === null) {
             try {
-                $driver = $_ENV['DB_DRIVER'];
+                $driver = $_ENV['DB_DRIVER'] ?? 'pgsql';
                 $host = $_ENV['DB_HOST'];
-                $port = $_ENV['DB_PORT'];
+                $port = $_ENV['DB_PORT'] ?? '5432';
                 $dbname = $_ENV['DB_NAME'];
                 $user = $_ENV['DB_USER'];
-                $pass = $_ENV['DB_PASSWORD'];
+                $password = $_ENV['DB_PASSWORD'];
 
                 $dsn = "{$driver}:host={$host};port={$port};dbname={$dbname}";
-                $this->conn = new PDO($dsn, $user, $pass);
-                $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
+                $this->conn = new PDO($dsn, $user, $password, [
+                    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+                ]);
             } catch (PDOException $e) {
-                die("Erreur de connexion PDO : " . $e->getMessage());
+                error_log("Erreur de connexion : " . $e->getMessage());
+                throw $e;
             }
         }
         return $this->conn;
