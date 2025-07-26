@@ -1,12 +1,10 @@
-
-
-        <div class="transactions-section">
+<div class="transactions-section">
             <div class="transactions-title">Transactions (<?= count($transactions) ?>)</div>
             <a href="/user/transactions" class="see-more">
                 Voir plus <i class="bi bi-arrow-right"></i>
             </a>
           
-            <a href="/client/depot-transfert" class="see-more" style="margin-left:16px; color:#28a745;">
+            <a href="/client/depot-transfert" class="see-more" style="margin-left:16px; color:#10b981;">
                 <i class="bi bi-arrow-right-circle"></i> Dépôt par transfert
             </a>
         </div>
@@ -43,3 +41,12 @@
             <?php endif; ?>
         </div>
     </div>
+
+<style>
+.transactions-section .see-more {
+    color: #10b981 !important;
+}
+.transactions-section .see-more:hover {
+    color: #059669 !important;
+}
+</style>

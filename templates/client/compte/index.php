@@ -102,3 +102,12 @@
     <?php endif; ?>
     </div>
 </div>
+
+<style>
+.pagination-btn {
+    background: linear-gradient(135deg, #10b981 0%, #34d399 100%) !important;
+}
+.pagination-btn:hover {
+    background: linear-gradient(135deg, #059669 0%, #10b981 100%) !important;
+}
+</style>

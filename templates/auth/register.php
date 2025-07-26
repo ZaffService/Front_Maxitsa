@@ -11,15 +11,15 @@
 <div class="bg-white rounded-lg container-shadow p-8 mx-auto">
     <div class="text-center mb-12">
         <h1 class="text-3xl font-bold text-gray-800">
-            <span class="text-orange-600">MAXIT</span> SA
+            <span class="text-green-600">MAXIT</span> SA
         </h1>
     </div>
 
     <form class="space-y-6" action="/register" method="POST" enctype="multipart/form-data" id="registrationForm">
         <!-- CNI -->
         <div>
-            <label class="block text-orange-600 font-semibold mb-2">
-                Numéro CNI <span class="text-orange-600">*</span>
+            <label class="block text-green-600 font-semibold mb-2">
+                Numéro CNI <span class="text-green-600">*</span>
             </label>
             <div class="relative">
                 <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -29,7 +29,7 @@
                 </div>
                 <input 
                     type="text" 
-                    class="w-full pl-10 pr-4 py-3 border-2 border-orange-300 rounded-lg text-gray-700 input-focus transition-all duration-200"
+                    class="w-full pl-10 pr-4 py-3 border-2 border-green-300 rounded-lg text-gray-700 input-focus transition-all duration-200"
                     name="numero_cni"
                     id="numero_cni"
                     maxlength="13"
@@ -41,7 +41,7 @@
         <div class="mt-4">
             <button type="button" 
                     id="checkCitizenBtn" 
-                    class="w-full px-6 py-3 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-700 transition-colors">
+                    class="w-full px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors">
                 <i class="bi bi-search"></i> Vérifier le citoyen
             </button>
         </div>
@@ -56,30 +56,30 @@
             <!-- Nom et Prénom -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                    <label class="block text-orange-600 font-semibold mb-2">
-                        Nom <span class="text-orange-600">*</span>
+                    <label class="block text-green-600 font-semibold mb-2">
+                        Nom <span class="text-green-600">*</span>
                     </label>
                     <div class="relative">
-                        <input type="text" name="nom" id="nom" readonly class="w-full pl-10 pr-4 py-3 border-2 border-orange-300 rounded-lg bg-gray-100">
+                        <input type="text" name="nom" id="nom" readonly class="w-full pl-10 pr-4 py-3 border-2 border-green-300 rounded-lg bg-gray-100">
                     </div>
                 </div>
                 <div>
-                    <label class="block text-orange-600 font-semibold mb-2">
-                        Prénom <span class="text-orange-600">*</span>
+                    <label class="block text-green-600 font-semibold mb-2">
+                        Prénom <span class="text-green-600">*</span>
                     </label>
                     <div class="relative">
-                        <input type="text" name="prenom" id="prenom" readonly class="w-full pl-10 pr-4 py-3 border-2 border-orange-300 rounded-lg bg-gray-100">
+                        <input type="text" name="prenom" id="prenom" readonly class="w-full pl-10 pr-4 py-3 border-2 border-green-300 rounded-lg bg-gray-100">
                     </div>
                 </div>
             </div>
 
             <!-- Autres champs -->
             <div>
-                <label class="block text-orange-600 font-semibold mb-2">
-                    Numéro Téléphone <span class="text-orange-600">*</span>
+                <label class="block text-green-600 font-semibold mb-2">
+                    Numéro Téléphone <span class="text-green-600">*</span>
                 </label>
                 <div class="relative">
-                    <input type="tel" name="numero_telephone" required class="w-full pl-10 pr-4 py-3 border-2 border-orange-300 rounded-lg">
+                    <input type="tel" name="numero_telephone" required class="w-full pl-10 pr-4 py-3 border-2 border-green-300 rounded-lg">
                     <?php if (isset($errors['numero_telephone'])): ?>
                         <div class="text-red-500 text-sm mt-1">
                             <?php echo $errors['numero_telephone'][0]; ?>
@@ -90,32 +90,32 @@
 
             <!-- Mot de passe -->
             <div>
-                <label class="block text-orange-600 font-semibold mb-2">
-                    Mot de passe <span class="text-orange-600">*</span>
+                <label class="block text-green-600 font-semibold mb-2">
+                    Mot de passe <span class="text-green-600">*</span>
                 </label>
                 <div class="relative">
-                    <input type="password" name="password" required class="w-full pl-10 pr-4 py-3 border-2 border-orange-300 rounded-lg">
+                    <input type="password" name="password" required class="w-full pl-10 pr-4 py-3 border-2 border-green-300 rounded-lg">
                 </div>
             </div>
 
             <!-- Photos CNI -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                    <label class="block text-orange-600 font-semibold mb-2">
-                        Photo Recto CNI <span class="text-orange-600">*</span>
+                    <label class="block text-green-600 font-semibold mb-2">
+                        Photo Recto CNI <span class="text-green-600">*</span>
                     </label>
                     <input type="file" name="photorecto" required class="w-full">
                 </div>
                 <div>
-                    <label class="block text-orange-600 font-semibold mb-2">
-                        Photo Verso CNI <span class="text-orange-600">*</span>
+                    <label class="block text-green-600 font-semibold mb-2">
+                        Photo Verso CNI <span class="text-green-600">*</span>
                     </label>
                     <input type="file" name="photoverso" required class="w-full">
                 </div>
             </div>
 
             <!-- Bouton de soumission -->
-            <button type="submit" id="submitBtn" disabled class="w-full px-6 py-3 bg-orange-600 text-white font-semibold rounded-lg disabled:opacity-50 disabled:cursor-not-allowed">
+            <button type="submit" id="submitBtn" disabled class="w-full px-6 py-3 bg-green-600 text-white font-semibold rounded-lg disabled:opacity-50 disabled:cursor-not-allowed">
                 Créer mon compte
             </button>
         </div>

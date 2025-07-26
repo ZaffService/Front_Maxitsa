@@ -21,7 +21,10 @@
     .depot-form label { font-weight: 500; }
     .depot-form input { width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #ccc; }
     .btn { padding: 10px 20px; border-radius: 8px; margin-right: 8px; }
-    .btn-primary { background: #ff8c00; color: #fff; border: none; }
+    .btn-primary { background: #10b981; color: #fff; border: none; }
+    .btn-primary:hover {
+        background: #059669;
+    }
     .btn-secondary { background: #eee; color: #333; border: none; }
     .alert { margin-bottom: 16px; padding: 10px; border-radius: 6px; }
     .alert-success { background: #e8f5e8; color: #2e7d32; }

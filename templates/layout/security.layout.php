@@ -13,7 +13,7 @@
     <script src="/js/login.js?v=<?= time() ?>" defer></script>
     <style>
         body {
-            background: linear-gradient(135deg, #ffffff 0%, #ffffff 100%);
+            background: linear-gradient(135deg, #f0fdf4 0%, #ffffff 100%);
             min-height: 100vh;
         }
         .container-shadow {
@@ -24,26 +24,26 @@
             height: 20px;
             fill: #9ca3af;
         }
-        .orange-gradient {
-            background: linear-gradient(135deg, #ea580c 0%, #fb923c 100%);
+        .green-gradient {
+            background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
         }
         .input-focus:focus {
             outline: none;
-            border-color: #ea580c;
-            box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.1);
+            border-color: #10b981;
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
         }
          
         .upload-area {
-            border: 2px dashed #fb923c;
+            border: 2px dashed #34d399;
             border-radius: 8px;
-            background-color: #fff7ed;
+            background-color: #f0fdf4;
             transition: all 0.3s ease;
             cursor: pointer;
             min-height: 120px;
         }
         .upload-area:hover {
-            border-color: #ea580c;
-            background-color: #ffedd5;
+            border-color: #10b981;
+            background-color: #dcfce7;
         }
         .black-button {
             background: linear-gradient(135deg, #1f2937 0%, #111827 100%);

@@ -42,7 +42,7 @@
         .profile-avatar {
             width: 45px;
             height: 45px;
-            background-color: #ff8c00;
+            background-color: #10b981;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -92,7 +92,7 @@
         }
 
         .sidebar-link {
-            color: #ff8c00;
+            color: #10b981;
             text-decoration: none;
             font-size: 15px;
             display: flex;
@@ -102,7 +102,7 @@
         }
 
         .sidebar-link:hover {
-            color: #ffb347;
+            color: #34d399;
         }
 
         .main-content {
@@ -145,7 +145,7 @@
         .menu-button {
             width: 48px;
             height: 48px;
-            background-color: #ff8c00;
+            background-color: #10b981;
             border: none;
             border-radius: 50%;
             cursor: pointer;
@@ -156,7 +156,7 @@
         }
 
         .balance-card {
-            background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
             border-radius: 16px;
             padding: 24px;
             margin-bottom: 20px;
@@ -176,7 +176,7 @@
         }
 
         .arrow {
-            color: #ff8c00;
+            color: #10b981;
             font-size: 18px;
         }
 
@@ -185,8 +185,8 @@
             padding: 8px 16px;
             border-radius: 20px;
             font-size: 14px;
-            color: #ff8c00;
-            border: 1px solid #ff8c00;
+            color: #10b981;
+            border: 1px solid #10b981;
         }
 
         .balance-amount {
@@ -210,11 +210,11 @@
         .amount {
             font-size: 32px;
             font-weight: bold;
-            color: #ff8c00;
+            color: #10b981;
         }
 
         .balance-link {
-            color: #ff8c00;
+            color: #10b981;
             text-decoration: none;
             font-size: 14px;
             display: flex;
@@ -236,7 +236,7 @@
         }
 
         .see-more {
-            color: #ff8c00;
+            color: #10b981;
             text-decoration: none;
             font-size: 14px;
             display: flex;
@@ -342,7 +342,7 @@
         }
 
         .pagination-btn {
-            background-color: #ff8c00;
+            background-color: #10b981;
             color: white;
             padding: 10px 16px;
             border-radius: 8px;
@@ -355,7 +355,7 @@
         }
 
         .pagination-btn:hover {
-            background-color: #e67c00;
+            background-color: #059669;
             color: white;
         }
 

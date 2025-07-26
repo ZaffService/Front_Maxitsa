@@ -10,3 +10,4 @@ return [
     "CREATE INDEX IF NOT EXISTS idx_compte_type ON compte(type)",
     "CREATE INDEX IF NOT EXISTS idx_utilisateur_profil ON utilisateur(profil_id)"
 ];
+

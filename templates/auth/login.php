@@ -21,13 +21,13 @@
 <!-- Header -->
  <div class="mb-16">
  <h1 class="text-3xl font-bold text-gray-800 mb-12">
- <span class="text-orange-600">MAXIT</span> SA
+ <span class="text-green-600">MAXIT</span> SA
  </h1>
  <div class="flex items-center justify-center mb-16">
  <div class="flex items-center gap-3">
- <div class="w-8 h-8 bg-orange-600 rounded-full flex items-center justify-center">
+ <div class="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center">
  <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
- <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+ <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 0114 0H3z" clip-rule="evenodd"></path>
  </svg>
  </div>
  <h2 class="text-2xl font-semibold text-gray-800">Mon Espace Client</h2>
@@ -38,7 +38,7 @@
 <!-- Ajout du spinner -->
 <div id="spinner" class="hidden fixed top-0 left-0 right-0 bg-white bg-opacity-80 flex items-center justify-center" style="height: 100vh; z-index: 1000;">
     <div class="text-center">
-        <svg class="w-16 h-16 animate-spin text-orange-600 mx-auto" viewBox="0 0 64 64" fill="none">
+        <svg class="w-16 h-16 animate-spin text-green-600 mx-auto" viewBox="0 0 64 64" fill="none">
             <path d="M32 3C16.536 3 4 15.536 4 31s12.536 28 28 28 28-12.536 28-28S47.464 3 32 3zm0 50.5C18.21 53.5 7 42.29 7 31S18.21 8.5 32 8.5 57 19.71 57 31 45.79 53.5 32 53.5z" fill="currentColor" opacity="0.2"/>
             <path d="M32 3C16.536 3 4 15.536 4 31h3c0-13.785 11.215-25 25-25S57 17.215 57 31h3C60 15.536 47.464 3 32 3z" fill="currentColor"/>
         </svg>
@@ -59,7 +59,7 @@
  <input
 type="text"
 placeholder="Entrez Votre Numero de Telephone"
-class="w-full pl-12 pr-4 py-4 border-2 <?= !empty($fieldErrors['telephone']) ? 'border-red-300' : 'border-orange-300' ?> rounded-full text-gray-700 placeholder-gray-500 input-focus transition-all duration-200"
+class="w-full pl-12 pr-4 py-4 border-2 <?= !empty($fieldErrors['telephone']) ? 'border-red-300' : 'border-green-300' ?> rounded-full text-gray-700 placeholder-gray-500 input-focus transition-all duration-200"
     name="telephone"
     value="<?= htmlspecialchars($old['telephone'] ?? '') ?>"
  >
@@ -83,7 +83,7 @@ class="w-full pl-12 pr-4 py-4 border-2 <?= !empty($fieldErrors['telephone']) ? '
  <input
 type="password"
 placeholder="Entrez Votre Mot de Passe"
-class="w-full pl-12 pr-4 py-4 border-2 <?= !empty($fieldErrors['password']) ? 'border-red-300' : 'border-orange-300' ?> rounded-full text-gray-700 placeholder-gray-500 input-focus transition-all duration-200"
+class="w-full pl-12 pr-4 py-4 border-2 <?= !empty($fieldErrors['password']) ? 'border-red-300' : 'border-green-300' ?> rounded-full text-gray-700 placeholder-gray-500 input-focus transition-all duration-200"
     name="password"
  >
  </div>
@@ -96,12 +96,12 @@ class="w-full pl-12 pr-4 py-4 border-2 <?= !empty($fieldErrors['password']) ? 'b
  </div>
 
 <!-- Bouton Suivant -->
- <button type="submit" class="px-12 py-4 orange-gradient text-white font-semibold rounded-full hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200">
+ <button type="submit" class="px-12 py-4 green-gradient text-white font-semibold rounded-full hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-200">
  Suivant
  </button>
 
 <!-- Lien créer mon compte -->
- <a href="/register" class="text-orange-600 hover:text-orange-700 transition-colors duration-200 text-sm">
+ <a href="/register" class="text-green-600 hover:text-green-700 transition-colors duration-200 text-sm">
  creer mon Compte
  </a>
  </div>
