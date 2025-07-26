@@ -1,22 +1,27 @@
 <?php
 return [
+    '/' => [
+        'controller' => \App\Controllers\SecurityController::class,
+        'action' => 'login'
+    ],
+    'login' => [
+        'controller' => \App\Controllers\SecurityController::class,
+        'action' => 'login'
+    ],
+    'register' => [
+        'controller' => \App\Controllers\SecurityController::class,
+        'action' => 'register'
+    ],
+    'client/dashboard' => [
+        'controller' => \App\Controllers\UserController::class,
+        'action' => 'index',
+        'middleware' => ['auth']
+    ],
     'user/depot' => [
         'controller' => App\Controllers\UserController::class,
         'method' => 'depot',
         'middleware' => ['auth'],  // ← Changé en SINGULIER
         'methods' => ['GET', 'POST'],
-    ],
-    '/' => [
-        'controller' => App\Controllers\SecurityController::class,
-        'method' => 'login',
-        'middleware' => [],  // ← Changé en SINGULIER
-        'methods' => ['GET', 'POST'],
-    ],
-    'client/dashboard' => [
-        'controller' => App\Controllers\UserController::class,
-        'method' => 'index',
-        'middleware' => ['auth'],  // ← Changé en SINGULIER
-        'methods' => ['GET'],
     ],
     'user/transactions/' => [
         'controller' => App\Controllers\UserController::class,
@@ -29,12 +34,6 @@ return [
         'method' => 'logout',
         'middleware' => ['auth'],  // ← Changé en SINGULIER
         'methods' => ['GET'],
-    ],
-    'register' => [
-        'controller' => App\Controllers\SecurityController::class,
-        'method' => 'register',
-        'middleware' => ['crypt_password'],  // ← Changé en SINGULIER
-        'methods' => ['GET', 'POST'],
     ],
     '/client/acountsList'=> [
         'controller' => App\Controllers\UserController::class,

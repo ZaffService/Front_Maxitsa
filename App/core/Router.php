@@ -4,19 +4,26 @@ namespace App\Core;
 
 class Router
 {
-    public static function resolve(array $routes)
+    public static function resolve(array $routes, array $middlewares)
     {
         $uri = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), '/');
+        $uri = $uri ?: '/';  // Si l'URI est vide, utilisez '/'
         
         if (array_key_exists($uri, $routes)) {
             $route = $routes[$uri];
             
-            
-            if (isset($route['middleware']) && is_array($route['middleware'])) {
-                self::runMiddlewares($route['middleware']);
+            // Vérification et exécution des middlewares
+            if (isset($route['middleware'])) {
+                foreach ((array)$route['middleware'] as $middleware) {
+                    if (isset($middlewares[$middleware])) {
+                        $middlewareClass = $middlewares[$middleware];
+                        $middlewareInstance = new $middlewareClass();
+                        $middlewareInstance->handle();
+                    }
+                }
             }
             
-            // Exécuter le contrôleur
+            // Exécution du contrôleur
             $controller = $route['controller'];
             $action = $route['action'];
             
@@ -24,28 +31,13 @@ class Router
                 $controllerInstance = new $controller();
                 if (method_exists($controllerInstance, $action)) {
                     $controllerInstance->$action();
-                } else {
-                    throw new \Exception("Action {$action} not found in {$controller}");
+                    return;
                 }
-            } else {
-                throw new \Exception("Controller {$controller} not found");
             }
-        } else {
-            http_response_code(404);
-            echo "Page not found";
         }
-    }
-    
-    private static function runMiddlewares(array $middlewares)
-    {
-        $middlewareConfig = require __DIR__ . '/../config/middlewares.php';
         
-        foreach ($middlewares as $middlewareName) {
-            if (isset($middlewareConfig[$middlewareName])) {
-                $middlewareClass = $middlewareConfig[$middlewareName];
-                $middleware = new $middlewareClass();
-                $middleware();
-            }
-        }
+        // Page non trouvée
+        http_response_code(404);
+        require_once __DIR__ . '/../../templates/errors/404.php';
     }
 }

@@ -12,22 +12,11 @@
             "App\\Controllers\\": "src/controllers"
         }
     },
-    "authors": [
-        {
-            "name": "pape sembene",
-            "email": "sembenpape4@gmail.com"
-        }
-    ],
     "require": {
         "php": "^8.1",
         "ext-pdo": "*",
         "ext-pdo_pgsql": "*",
         "twilio/sdk": "^6.0",
         "vlucas/phpdotenv": "^5.4"
-    },
-    "scripts": {
-        "post-install-cmd": [
-            "php migration.php"
-        ]
     }
 }

@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+    dns:
+      - 8.8.8.8  # Ajout de Google DNS
+      - 8.8.4.4  # DNS de secours
+    environment:
+      - APP_ENV=production
+      - DB_DRIVER=pgsql
+      - DB_HOST=dpg-d221q115pdvs738gbss0-a.oregon-postgres.render.com  # Nom d'hôte complet
+      - DB_PORT=5432
+      - DB_NAME=maxit
+      - DB_USER=maxit_user
+      - DB_PASSWORD=BUJxqyXDS8MYceL1yVqPMu17yO7yaTT0
+    networks:
+      - maxit_net
+
+networks:
+  maxit_net:
+    driver: bridge
