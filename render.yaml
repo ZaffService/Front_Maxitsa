@@ -1,37 +1,21 @@
 services:
   - type: web
     name: maxit-app
-    env: php
-    buildCommand: |
-      composer install --no-dev
-      php migration.php
-    startCommand: vendor/bin/heroku-php-apache2 public/
+    runtime: php
+    buildCommand: composer install
+    startCommand: php -S 0.0.0.0:$PORT -t public/
     envVars:
       - key: APP_ENV
         value: production
-      - key: APP_URL
-        fromDatabase:
-          name: maxit
-          property: database_url
       - key: DB_DRIVER
         value: pgsql
       - key: DB_HOST
-        fromDatabase:
-          name: maxit
-          property: host
+        value: dpg-d221q115pdvs738gbss0-a
       - key: DB_PORT
-        fromDatabase:
-          name: maxit
-          property: port
+        value: 5432
       - key: DB_NAME
-        fromDatabase:
-          name: maxit
-          property: database
+        value: maxit
       - key: DB_USER
-        fromDatabase:
-          name: maxit
-          property: username
+        value: maxit_user
       - key: DB_PASSWORD
-        fromDatabase:
-          name: maxit
-          property: password
+        value: BUJxqyXDS8MYceL1yVqPMu17yO7yaTT0
