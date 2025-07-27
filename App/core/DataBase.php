@@ -54,8 +54,10 @@ class DataBase
             $port = $_ENV['DB_PORT'];
             $user = $_ENV['DB_USER'];
             $pass = $_ENV['DB_PASSWORD'];
+            $dbname = $_ENV ['DB_NAME'];
 
-            $dsn = "{$driver}:host={$host};port={$port}";
+            $dsn = "{$driver}:host={$host};port={$port};dbname={$dbname}";
+
             $conn = new PDO($dsn, $user, $pass);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             return $conn;
