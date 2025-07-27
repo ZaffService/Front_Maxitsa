@@ -32,8 +32,7 @@ class DataBase
                 $user = $_ENV['DB_USER'];
                 $password = $_ENV['DB_PASSWORD'];
 
-                $dsn = "{$driver}:host={$host};port={$port};dbname={$dbname}";
-                
+                $dsn = "{$driver}:host={$host};port={$port};dbname=maxit";                
                 $this->conn = new PDO($dsn, $user, $password, [
                     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
