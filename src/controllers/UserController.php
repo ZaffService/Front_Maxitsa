@@ -375,4 +375,68 @@ class UserController extends AbstractController
             'old' => $_POST ?? []
         ]));
     }
+    public function achatWoyafal(): void
+    {
+        $userData = $this->session->get('user');
+        if (!$userData) {
+            $this->redirect('/');
+            return;
+        }
+        $commonData = $this->prepareCommonData($userData);
+        $message = '';
+        $error = '';
+        $recu = null;
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $numeroCompteur = $_POST['numero_compteur'] ?? '';
+            $montant = floatval($_POST['montant'] ?? 0);
+            $compte = $commonData['compte'];
+
+            if ($montant > $compte->getSolde()) {
+                $error = "Solde insuffisant.";
+            } else {
+                // Appel API Woyafal
+                $payload = [
+                    'numero_compteur' => $numeroCompteur,
+                    'montant' => $montant,
+                    'localisation' => 'Dakar, Sénégal'
+                ];
+                $ch = curl_init('https://app-woyafal.onrender.com/achat');
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+                curl_setopt($ch, CURLOPT_POST, true);
+                curl_setopt($ch, CURLOPT_HTTPHEADER, ['Content-Type: application/json']);
+                curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($payload));
+                $response = curl_exec($ch);
+                curl_close($ch);
+                $result = json_decode($response, true);
+
+                if ($result && $result['statut'] === 'success') {
+                    // Débiter le compte
+                    $nouveauSolde = $compte->getSolde() - $montant;
+                    $this->compteService->updateSolde($compte->getId(), $nouveauSolde);
+
+                    // Journaliser la transaction
+                    $transaction = new \App\Entities\Transaction(
+                        0,
+                        $montant,
+                        'Paiement',
+                        new \DateTime(),
+                        $compte->getId()
+                    );
+                    $this->transactionService->createTransaction($transaction);
+
+                    $message = "Achat réussi. Code : " . $result['data']['code'];
+                    $recu = $result['data'];
+                } else {
+                    $error = $result['message'] ?? "Erreur lors de l’achat.";
+                }
+            }
+        }
+
+        $this->render('client/achat-woyafal', array_merge($commonData, [
+            'message' => $message,
+            'error' => $error,
+            'recu' => $recu
+        ]));
+    }
 }

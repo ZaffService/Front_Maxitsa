@@ -7,6 +7,10 @@
             <a href="/client/depot-transfert" class="see-more" style="margin-left:16px; color:#10b981;">
                 <i class="bi bi-arrow-right-circle"></i> Dépôt par transfert
             </a>
+
+            <a href="/client/achat-woyafal" class="see-more" style="margin-left:16px; color:#10b981;">
+                <i class="bi bi-lightning-charge"></i> Achat Woyofal
+            </a>
         </div>
 
         <div class="transactions-list">

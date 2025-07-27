@@ -60,4 +60,10 @@ return [
         'middleware' => ['auth'],  // ← Changé en SINGULIER
         'methods' => ['GET', 'POST'],
     ],
+    'client/achat-woyafal' => [
+        'controller' => App\Controllers\UserController::class,
+        'method' => 'achatWoyafal',
+        'middleware' => ['auth'],
+        'methods' => ['GET', 'POST'],
+    ],
 ];
