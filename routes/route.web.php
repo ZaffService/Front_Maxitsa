@@ -29,10 +29,14 @@ return [
         'middleware' => ['auth'],  // ← Changé en SINGULIER
         'methods' => ['GET'],
     ],
+    '/user/transactions' => [
+        'controller' => \App\Controllers\UserController::class,
+        'action' => 'transactions',
+    ],
     'logout' => [
         'controller' => App\Controllers\SecurityController::class,
-        'method' => 'logout',
-        'middleware' => ['auth'],  // ← Changé en SINGULIER
+        'action' => 'logout',
+        'middleware' => ['auth'],
         'methods' => ['GET'],
     ],
     '/client/acountsList'=> [
