@@ -417,6 +417,7 @@ class UserController extends AbstractController
                     // Débiter le compte
                     $nouveauSolde = $compte->getSolde() - $montant;
                     $this->compteService->updateSolde($compte->getId(), $nouveauSolde);
+                    $compte->setSolde($nouveauSolde); // <-- Ajoute cette ligne pour mettre à jour l'objet en mémoire
 
                     // Journaliser la transaction
                     $transaction = new \App\Entities\Transaction(
