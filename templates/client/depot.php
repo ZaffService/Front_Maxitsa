@@ -6,6 +6,9 @@
     <?php if (!empty($error)): ?>
         <div class="alert alert-danger"><?= htmlspecialchars($error) ?></div>
     <?php endif; ?>
+    <div>
+        <p>Solde actuel : <?= htmlspecialchars($compte->getSolde()) ?> FCFA</p>
+    </div>
     <form method="post" class="depot-form">
         <div class="form-group">
             <label for="montant">Montant à déposer (FCFA)</label>

@@ -47,8 +47,11 @@
     </div>
 
     <div style="margin-top: 16px;">
-        <a href="/client/depot" class="btn btn-success">
-            Recharger le compte actif
+        <a href="/client/depot" 
+           style="background:#10b981; color:#fff; padding:10px 22px; border-radius:8px; font-weight:600; font-size:1rem; text-decoration:none; float:right; margin-top:-40px; margin-right:24px; box-shadow:0 2px 8px #10b98144; transition:background 0.2s;"
+           onmouseover="this.style.background='#059669';"
+           onmouseout="this.style.background='#10b981';">
+           <i class="bi bi-plus-circle"></i> Déposer
         </a>
     </div>
 

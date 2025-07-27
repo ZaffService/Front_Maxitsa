@@ -176,37 +176,12 @@ class UserController extends AbstractController
             $this->redirect('/');
             return;
         }
-        
         $commonData = $this->prepareCommonData($userData);
-        $message = '';
-        $error = '';
 
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $montant = floatval($_POST['montant'] ?? 0);
-            if ($montant <= 0) {
-                $error = 'Le montant doit être supérieur à zéro.';
-            } else {
-                try {
-                    $transaction = new \App\Entities\Transaction(
-                        0,
-                        $montant,
-                        'Depot',
-                        new \DateTime(),
-                        $commonData['compte']->getId()
-                    );
-                    $this->transactionService->createTransaction($transaction);
-                    $commonData['compte']->setSolde($commonData['compte']->getSolde() + $montant);
-                    $this->compteService->updateSolde($commonData['compte']->getId(), $commonData['compte']->getSolde());
-                    $message = 'Dépôt effectué avec succès !';
-                } catch (\Exception $e) {
-                    $error = $e->getMessage();
-                }
-            }
-        }
-        $this->render('client/depot', array_merge($commonData, [
-            'message' => $message,
-            'error' => $error
-        ]));
+        // DEBUG
+        error_log('Compte principal: ' . print_r($commonData['compte'], true));
+
+        // ...suite du code...
     }
 
     public function createSecondaryAccount()
