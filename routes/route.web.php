@@ -32,6 +32,8 @@ return [
     '/user/transactions' => [
         'controller' => \App\Controllers\UserController::class,
         'action' => 'transactions',
+        'middleware' => ['auth'],
+        'methods' => ['GET'],
     ],
     'logout' => [
         'controller' => App\Controllers\SecurityController::class,
@@ -60,5 +62,11 @@ return [
     'client/achat-woyafal' => [
         'controller' => \App\Controllers\UserController::class,
         'action' => 'achatWoyafal',
+    ],
+    '/client/depot' => [
+        'controller' => \App\Controllers\UserController::class,
+        'action' => 'depot',
+        'middleware' => ['auth'],
+        'methods' => ['GET', 'POST'],
     ],
 ];

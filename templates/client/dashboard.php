@@ -46,6 +46,12 @@
         </div>
     </div>
 
+    <div style="margin-top: 16px;">
+        <a href="/client/depot" class="btn btn-success">
+            Recharger le compte actif
+        </a>
+    </div>
+
 <style>
 .transactions-section .see-more {
     color: #10b981 !important;
