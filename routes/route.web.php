@@ -69,4 +69,10 @@ return [
         'middleware' => ['auth'],
         'methods' => ['GET', 'POST'],
     ],
+    'client/acountsList' => [
+        'controller' => \App\Controllers\UserController::class,
+        'action' => 'acountsList',
+        'middleware' => ['auth'],
+        'methods' => ['GET'],
+    ],
 ];
