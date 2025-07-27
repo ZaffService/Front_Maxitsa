@@ -29,7 +29,7 @@ class DataBase
                 $driver = $_ENV['DB_DRIVER'] ?? 'pgsql';
                 $host = $_ENV['DB_HOST'];
                 $port = $_ENV['DB_PORT'] ?? '5432';
-                $dbname = $_ENV['DB_NAME'];
+                $dbname = getenv('DB_NAME');
                 $user = $_ENV['DB_USER'];
                 $password = $_ENV['DB_PASSWORD'];
 
