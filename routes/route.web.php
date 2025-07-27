@@ -36,17 +36,12 @@ return [
         'methods' => ['GET'],
     ],
     '/client/acountsList'=> [
-        'controller' => App\Controllers\UserController::class,
-        'method' => 'acountsList',
-        'middleware' => ['auth'],  // ← Changé en SINGULIER
-        'methods' => ['GET'],
+        'controller' => \App\Controllers\UserController::class,
+        'action' => 'acountsList',
     ],
     '/client/create-account'=> [
-        'controller' => App\Controllers\UserController::class,
-        'method' => 'createSecondaryAccount',
-        'middleware' => ['auth'],  // ← Changé en SINGULIER
-        'methods' => ['GET', 'POST'],
-        
+        'controller' => \App\Controllers\UserController::class,
+        'action' => 'createSecondaryAccount',
     ],
     '/client/set-main-account' => [
         'controller' => App\Controllers\UserController::class,
@@ -56,14 +51,10 @@ return [
     ],
     'client/depot-transfert' => [
         'controller' => App\Controllers\UserController::class,
-        'method' => 'depotTransfert',
-        'middleware' => ['auth'],  // ← Changé en SINGULIER
-        'methods' => ['GET', 'POST'],
+        'action' => 'depotTransfert',
     ],
     'client/achat-woyafal' => [
         'controller' => \App\Controllers\UserController::class,
         'action' => 'achatWoyafal',
-        'middleware' => ['auth'],
-        'methods' => ['GET', 'POST'],
     ],
 ];
