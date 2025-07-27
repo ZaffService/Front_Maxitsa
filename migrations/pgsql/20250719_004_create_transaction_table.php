@@ -1,5 +1,4 @@
 <?php
-// Migration PostgreSQL - Création de la table transaction
 return [
     "CREATE TABLE IF NOT EXISTS transaction (
         id SERIAL PRIMARY KEY,

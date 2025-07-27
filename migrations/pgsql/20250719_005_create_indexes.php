@@ -1,5 +1,4 @@
 <?php
-// Migration PostgreSQL - Création des index
 return [
     "CREATE UNIQUE INDEX IF NOT EXISTS idx_unique_compte_principal 
      ON compte (client_id) 

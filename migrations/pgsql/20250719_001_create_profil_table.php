@@ -1,5 +1,4 @@
 <?php
-// Migration PostgreSQL - Création de la table profil
 return [
     "CREATE TABLE IF NOT EXISTS profil (
         id SERIAL PRIMARY KEY,

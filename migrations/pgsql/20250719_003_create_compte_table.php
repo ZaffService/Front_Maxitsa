@@ -1,5 +1,4 @@
 <?php
-// Migration PostgreSQL - Création de la table compte
 return [
     "CREATE TABLE IF NOT EXISTS compte (
         id SERIAL PRIMARY KEY,
