@@ -1,6 +1,8 @@
 <!-- templates/client/achat-woyafal.php -->
 <a href="/client/dashboard" style="color:#10b981;text-decoration:none;"><i class="bi bi-arrow-left"></i> Retour au dashboard</a>
-<h2 style="color:#10b981;">Achat Woyofal</h2>
+<h2 style="color:#fff; background:#10b981; padding:16px; border-radius:12px; text-align:center; box-shadow:0 2px 8px #10b98144; margin-top:24px;">
+    <i class="bi bi-lightning-charge"></i> Achat Woyofal
+</h2>
 <form method="POST" action="/client/achat-woyafal" style="max-width:400px;margin:auto;">
     <label>Numéro de compteur :</label>
     <input type="text" name="numero_compteur" required class="search-input" style="width:100%;margin-bottom:12px;">

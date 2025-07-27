@@ -61,8 +61,8 @@ return [
         'methods' => ['GET', 'POST'],
     ],
     'client/achat-woyafal' => [
-        'controller' => App\Controllers\UserController::class,
-        'method' => 'achatWoyafal',
+        'controller' => \App\Controllers\UserController::class,
+        'action' => 'achatWoyafal',
         'middleware' => ['auth'],
         'methods' => ['GET', 'POST'],
     ],
