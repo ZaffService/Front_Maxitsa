@@ -29,7 +29,7 @@ return [
         'middleware' => ['auth'],  // ← Changé en SINGULIER
         'methods' => ['GET'],
     ],
-    '/user/transactions' => [
+    'user/transactions' => [
         'controller' => \App\Controllers\UserController::class,
         'action' => 'transactions',
         'middleware' => ['auth'],
@@ -41,15 +41,15 @@ return [
         'middleware' => ['auth'],
         'methods' => ['GET'],
     ],
-    '/client/acountsList'=> [
+    'client/accountsList'=> [
         'controller' => \App\Controllers\UserController::class,
-        'action' => 'acountsList',
+        'action' => 'accountsList',
     ],
-    '/client/create-account'=> [
+    'client/create-account' => [
         'controller' => \App\Controllers\UserController::class,
         'action' => 'createSecondaryAccount',
     ],
-    '/client/set-main-account' => [
+    'client/set-main-account' => [
         'controller' => App\Controllers\UserController::class,
         'method' => 'setMainAccount',
         'middleware' => ['auth'],  // ← Changé en SINGULIER
@@ -63,7 +63,7 @@ return [
         'controller' => \App\Controllers\UserController::class,
         'action' => 'achatWoyafal',
     ],
-    '/client/depot' => [
+    'client/depot' => [
         'controller' => \App\Controllers\UserController::class,
         'action' => 'depot',
         'middleware' => ['auth'],
