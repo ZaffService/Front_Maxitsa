@@ -18,7 +18,7 @@ class Router
                     if (isset($middlewares[$middleware])) {
                         $middlewareClass = $middlewares[$middleware];
                         $middlewareInstance = new $middlewareClass();
-                        $middlewareInstance->handle();
+                        $middlewareInstance(); // <-- Appelle __invoke()
                     }
                 }
             }
