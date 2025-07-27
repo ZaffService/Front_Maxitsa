@@ -31,17 +31,14 @@ class UserController extends AbstractController
     /**
      * Prépare les données communes pour tous les templates
      */
-    private function prepareCommonData($userData): array
+    public function prepareCommonData($userData): array
     {
         $user = $userData['user'];
-        $compteActuel = $userData['compte'];
-        
-        // Toujours récupérer le compte principal pour la sidebar
+        // Toujours récupérer le compte principal à jour depuis la base
         $comptePrincipal = $this->compteService->getComptePrincipal($user->getId());
-        
         return [
             'user' => $user,
-            'compte' => $compteActuel,
+            'compte' => $comptePrincipal,
             'comptePrincipal' => $comptePrincipal
         ];
     }
