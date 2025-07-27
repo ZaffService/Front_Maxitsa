@@ -410,6 +410,10 @@
             <i class="bi bi-list-check"></i>
             Voir mes Comptes
         </a>
+        <a href="/client/depot" class="sidebar-button sidebar-link">
+            <i class="bi bi-plus-circle"></i>
+            Déposer
+        </a>
         
         <div class="sidebar-bottom">
             <a href="#" class="sidebar-link">
